@@ -1,15 +1,26 @@
 package pack;
 
 public class Hogwarts {
+    private String  facultet;
     private String fio;
     private int selfPoints;
+    private int magicPower, transDist;
 
-    public Hogwarts(String fio, int selfPoints) {
+    public Hogwarts(String facultet, String fio, int selfPoints, int magicPower, int transDist) {
+        this.facultet = facultet;
         this.fio = fio;
         this.selfPoints = selfPoints;
+        this.magicPower = magicPower;
+        this.transDist = transDist;
     }
 
 
+    public String getFacultet(){
+        return facultet;
+    }
+    public void setFacultet(String facultet){
+        this.facultet = facultet;
+    }
     public String getFio() {
         return fio;
     }
@@ -23,40 +34,55 @@ public class Hogwarts {
         this.selfPoints = selfPoints;
     }
 
+    public int getMagicPower() {
+        return magicPower;
+    }
+    public void setMagicPower(int magicPower) {
+        this.magicPower = magicPower;
+    }
+    public int getTransDist() {
+        return transDist;
+    }
+    public void setTransDist(int transDist) {
+        this.transDist = transDist;
+    }
 }
 
 class Griffindor extends Hogwarts{
     static String qualities = "Студентам этого факультета присущи благородство, честь и храбрость.";
 
-    public Griffindor(String fio, int selfPoints){
-        super(fio,selfPoints);
+    public Griffindor(String facultet, String fio, int selfPoints, int magicPower, int transDist){
+        super(facultet, fio, selfPoints, magicPower, transDist);
 
     }
 
     @Override
     public String toString() {
-        return "Гриффиндор  " + getFio() + " " + qualities + " индивидуальные очки: " + getSelfPoints();
+        return getFio() + " индивидуальные очки: " + getSelfPoints() + " магические силы и расстоянию трансгрессии" +
+                " " + getMagicPower() + " " + getTransDist();
     }
 }
-class Puffendui extends Griffindor{
+class Puffendui extends Hogwarts{
     static String qualities = "Студенты этого факультета трудолюбивы, верны, честны.";
-    public Puffendui(String fio, int selfPoints){
-        super(fio, selfPoints);
+    public Puffendui(String facultet, String fio, int selfPoints, int magicPower, int transDist){
+        super(facultet, fio, selfPoints, magicPower, transDist);
     }
     @Override
     public String toString() {
-        return "Пуффендуй " + getFio() + " " + qualities + " индивидуальные очки: " + getSelfPoints();
+        return getFio() + " индивидуальные очки: " + getSelfPoints() + " магические силы и расстоянию трансгрессии" +
+                " " + getMagicPower() + " " + getTransDist();
     }
 }
 
 class Koktevran extends Hogwarts{
     static String qualities = "Студенты этого факультета умны, мудры, остроумны и полны творчества.";
-    public Koktevran(String fio, int selfPoints){
-        super(fio, selfPoints);
+    public Koktevran(String facultet, String fio, int selfPoints, int magicPower, int transDist){
+        super(facultet, fio, selfPoints, magicPower, transDist);
     }
     @Override
     public String toString() {
-        return "Пуффендуй " + getFio() + " " + qualities  + " индивидуальные очки: " + getSelfPoints();
+        return getFio() + " индивидуальные очки: " + getSelfPoints() + " магические силы и расстоянию трансгрессии" +
+                " " + getMagicPower() + " " + getTransDist();
     }
 
 }
@@ -64,11 +90,12 @@ class Koktevran extends Hogwarts{
 class Slizerin extends Hogwarts{
     static String qualities = "Студентам этого факультета присущи хитрость, решительность, амбициозность, находчивость и жажда власти.";
 
-    public Slizerin(String fio, int selfPoints){
-        super(fio, selfPoints);
+    public Slizerin(String facultet, String fio, int selfPoints, int magicPower, int transDist){
+        super(facultet, fio, selfPoints, magicPower, transDist);
     }
     @Override
     public String toString() {
-        return "Слизерин " + getFio() + " " + qualities + " индивидуальные очки: " + getSelfPoints();
+        return getFio() + " индивидуальные очки: " + getSelfPoints() + " магические силы и расстоянию трансгрессии" +
+                " " + getMagicPower() + " " + getTransDist();
     }
 }
